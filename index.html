@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DreamWeaver — The Multi-Position Neck Pillow by MedCline</title>
+<meta name="description" content="Sleep how you sleep. Aligned anyway. The zoned neck pillow engineered by MedCline that adapts to back, side, and combination sleepers. $89.99.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: { extend: {
+    colors: {
+      night:  {50:'#f4f6fb',100:'#e6eaf4',700:'#2b3a5c',800:'#1c2740',900:'#111a30',950:'#0a1122'},
+      moon:   '#f7f3ea',
+      dusk:   '#8b9dc9',
+      ember:  {400:'#e8a87c',500:'#dd8a54',600:'#c96f38'}
+    },
+    fontFamily: { display:['Fraunces','serif'], sans:['Inter','system-ui','sans-serif'] }
+  }}
+}
+</script>
+<style>
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.visible{opacity:1;transform:none}
+  .zone-dot{transition:transform .2s ease, box-shadow .2s ease}
+  .zone-dot:hover,.zone-dot.active{transform:scale(1.15)}
+  .zone-dot.active{box-shadow:0 0 0 6px rgba(221,138,84,.25)}
+  .faq-answer{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease}
+  .faq-item.open .faq-answer{grid-template-rows:1fr}
+  .faq-item.open .faq-chevron{transform:rotate(180deg)}
+  .faq-chevron{transition:transform .3s ease}
+  .pos-fade{animation:posfade .5s ease}
+  @keyframes posfade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  html{-webkit-text-size-adjust:100%}
+  body{overflow-x:clip}
+</style>
+</head>
+<body class="bg-moon font-sans text-night-900 antialiased">
+
+<!-- NAV -->
+<header id="nav" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
+  <div class="max-w-6xl mx-auto px-5 py-4 flex items-center justify-between">
+    <a href="#top" class="font-display text-2xl tracking-tight text-moon">dream<span class="text-ember-400">weaver</span></a>
+    <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-dusk">
+      <a href="#design" class="hover:text-moon transition">The Design</a>
+      <a href="#positions" class="hover:text-moon transition">Every Position</a>
+      <a href="#specs" class="hover:text-moon transition">Specs</a>
+      <a href="#faq" class="hover:text-moon transition">FAQ</a>
+    </nav>
+    <a href="https://medcline.com/products/multi-position-neck-pillow" target="_blank" rel="noopener"
+       class="bg-ember-500 hover:bg-ember-600 text-white text-sm font-semibold px-5 py-2.5 rounded-full transition shadow-lg shadow-ember-500/25">
+      Shop — $89.99
+    </a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="top" class="relative bg-night-950 text-moon overflow-hidden">
+  <div class="absolute inset-0 opacity-40" aria-hidden="true">
+    <div class="absolute -top-32 -right-32 w-[36rem] h-[36rem] rounded-full bg-night-700 blur-3xl"></div>
+    <div class="absolute bottom-0 -left-40 w-[30rem] h-[30rem] rounded-full bg-ember-600/20 blur-3xl"></div>
+  </div>
+  <div class="relative max-w-6xl mx-auto px-5 pt-32 pb-20 md:pt-40 md:pb-28 grid md:grid-cols-2 gap-12 items-center">
+    <div>
+      <p class="text-ember-400 font-semibold text-sm tracking-widest uppercase mb-5">New · From the sleep engineers at MedCline</p>
+      <h1 class="font-display font-light text-5xl md:text-6xl leading-[1.05] mb-6">
+        Sleep how you sleep.<br><span class="font-semibold text-ember-400">Aligned anyway.</span>
+      </h1>
+      <p class="text-dusk text-lg leading-relaxed mb-8 max-w-md">
+        You change positions forty times a night. DreamWeaver's zoned design cradles your head and holds your neck in alignment through every single one.
+      </p>
+      <div class="flex flex-wrap items-center gap-4">
+        <a href="https://medcline.com/products/multi-position-neck-pillow" target="_blank" rel="noopener"
+           class="bg-ember-500 hover:bg-ember-600 text-white font-semibold px-8 py-4 rounded-full transition shadow-xl shadow-ember-500/30 text-lg">
+          Get DreamWeaver — $89.99
+        </a>
+        <a href="#design" class="text-dusk hover:text-moon font-medium transition">See how it works ↓</a>
+      </div>
+      <p class="mt-6 text-sm text-dusk/70">One size · Free of harmful chemicals (CertiPUR-US®) · Machine-washable cover</p>
+    </div>
+    <div class="reveal">
+      <img src="img/hero-back.jpg" alt="Man sleeping comfortably on his back on the DreamWeaver Multi-Position Neck Pillow" class="rounded-3xl shadow-2xl ring-1 ring-white/10 w-full">
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<section class="bg-night-900 text-moon border-t border-white/5">
+  <div class="max-w-6xl mx-auto px-5 py-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+    <div class="reveal"><p class="font-display text-lg">CertiPUR-US®</p><p class="text-dusk text-sm">certified gel-infused foam</p></div>
+    <div class="reveal"><p class="font-display text-lg">Cooling comfort</p><p class="text-dusk text-sm">gel-infused for temperature balance</p></div>
+    <div class="reveal"><p class="font-display text-lg">Machine-washable</p><p class="text-dusk text-sm">pre-installed cover</p></div>
+    <div class="reveal"><p class="font-display text-lg">Doctor-founded</p><p class="text-dusk text-sm">by MedCline sleep science</p></div>
+  </div>
+</section>
+
+<!-- ZONE EXPLORER -->
+<section id="design" class="py-20 md:py-28">
+  <div class="max-w-6xl mx-auto px-5">
+    <div class="text-center max-w-2xl mx-auto mb-14 reveal">
+      <p class="text-ember-600 font-semibold text-sm tracking-widest uppercase mb-3">The design</p>
+      <h2 class="font-display text-4xl md:text-5xl font-light mb-4">Three zones. <span class="font-semibold">One job.</span></h2>
+      <p class="text-night-700/70 text-lg">Tap each zone to see what it does. Every contour exists to keep your head and spine in line — no matter where the night takes you.</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <div class="relative reveal">
+        <img src="img/zones-diagram.png" alt="Diagram of the DreamWeaver pillow's zoned design" class="w-full rounded-2xl bg-white shadow-lg p-4">
+        <button data-zone="0" class="zone-dot active absolute left-[47%] top-[38%] w-9 h-9 rounded-full bg-ember-500 text-white font-bold shadow-lg" aria-label="Zone 1: head cradle">1</button>
+        <button data-zone="1" class="zone-dot absolute left-[47%] top-[72%] w-9 h-9 rounded-full bg-night-800 text-white font-bold shadow-lg" aria-label="Zone 2: neck contour">2</button>
+        <button data-zone="2" class="zone-dot absolute left-[12%] top-[52%] w-9 h-9 rounded-full bg-night-800 text-white font-bold shadow-lg" aria-label="Zone 3: arm zones">3</button>
+      </div>
+      <div id="zone-panel" class="reveal">
+        <div class="bg-white rounded-3xl p-8 md:p-10 shadow-xl ring-1 ring-night-900/5 min-h-[16rem]">
+          <p id="zone-kicker" class="text-ember-600 font-semibold text-sm tracking-widest uppercase mb-3">Zone 1</p>
+          <h3 id="zone-title" class="font-display text-2xl font-semibold mb-3">Pressure-Relieving Head Cradle</h3>
+          <p id="zone-copy" class="text-night-700/80 leading-relaxed text-lg">The central depression gently cradles your head, helping reduce pressure while keeping your neck supported and aligned throughout the night.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POSITION TOGGLE -->
+<section id="positions" class="bg-night-950 text-moon py-20 md:py-28">
+  <div class="max-w-6xl mx-auto px-5">
+    <div class="text-center max-w-2xl mx-auto mb-12 reveal">
+      <p class="text-ember-400 font-semibold text-sm tracking-widest uppercase mb-3">Every position</p>
+      <h2 class="font-display text-4xl md:text-5xl font-light mb-4">Built for the way you <span class="font-semibold">actually</span> sleep</h2>
+    </div>
+    <div class="flex flex-wrap justify-center gap-2 mb-10 reveal" role="tablist" aria-label="Sleep positions">
+      <button data-pos="0" role="tab" aria-selected="true" class="pos-btn bg-ember-500 text-white font-semibold px-4 sm:px-6 py-3 rounded-full transition">Back</button>
+      <button data-pos="1" role="tab" aria-selected="false" class="pos-btn bg-white/10 hover:bg-white/20 text-moon font-semibold px-4 sm:px-6 py-3 rounded-full transition">Side</button>
+      <button data-pos="2" role="tab" aria-selected="false" class="pos-btn bg-white/10 hover:bg-white/20 text-moon font-semibold px-4 sm:px-6 py-3 rounded-full transition">Combination</button>
+    </div>
+    <div id="pos-panel" class="grid md:grid-cols-2 gap-10 items-center">
+      <img id="pos-img" src="img/hero-back.jpg" alt="Back sleeping on the DreamWeaver pillow" class="rounded-3xl shadow-2xl ring-1 ring-white/10 w-full">
+      <div>
+        <h3 id="pos-title" class="font-display text-3xl font-semibold mb-4">On your back</h3>
+        <p id="pos-copy" class="text-dusk text-lg leading-relaxed mb-6">The head cradle takes the pressure off while the neck contour fills the curve your mattress can't reach. Your spine stays neutral from the first minute to the last.</p>
+        <ul id="pos-points" class="space-y-3 text-moon/90">
+          <li class="flex gap-3"><span class="text-ember-400">✓</span>Central cradle stabilizes the head</li>
+          <li class="flex gap-3"><span class="text-ember-400">✓</span>Contour supports the cervical curve</li>
+          <li class="flex gap-3"><span class="text-ember-400">✓</span>Reduces overnight pressure build-up</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIFESTYLE / HOW IT WORKS -->
+<section class="py-20 md:py-28">
+  <div class="max-w-6xl mx-auto px-5 grid md:grid-cols-2 gap-12 items-center">
+    <img src="img/how-it-works.jpg" alt="The DreamWeaver pillow in a calm bedroom setting" class="rounded-3xl shadow-xl reveal w-full">
+    <div class="reveal">
+      <p class="text-ember-600 font-semibold text-sm tracking-widest uppercase mb-3">Why it works</p>
+      <h2 class="font-display text-4xl font-light mb-6">Memory foam with a <span class="font-semibold">point of view</span></h2>
+      <div class="space-y-6 text-night-700/80 text-lg leading-relaxed">
+        <p>Most pillows are a bag of soft. DreamWeaver is geometry: a zoned surface shaped around how heads, necks, and shoulders actually rest — built from CertiPUR-US® certified, gel-infused memory foam that contours without collapsing.</p>
+        <p>It comes from MedCline, the doctor-founded company behind clinically studied sleep-posture systems. This isn't a medical device — it's what happens when the same engineers design for pure, everyday comfort.</p>
+        <p class="text-sm text-night-700/60">Honest note: like any contoured pillow, your body may take a few nights to a few weeks to adjust as your alignment improves. Stick with it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPECS -->
+<section id="specs" class="bg-white py-20 md:py-28">
+  <div class="max-w-6xl mx-auto px-5">
+    <div class="text-center mb-14 reveal">
+      <p class="text-ember-600 font-semibold text-sm tracking-widest uppercase mb-3">Specs & details</p>
+      <h2 class="font-display text-4xl md:text-5xl font-light">Everything in the box</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="reveal bg-moon rounded-3xl p-8">
+        <h3 class="font-display text-xl font-semibold mb-4">Dimensions</h3>
+        <p class="text-4xl font-display font-light mb-2">24.8" × 15.7" × 4.9"</p>
+        <p class="text-night-700/70">One size, engineered to fit back, side, and combination sleepers.</p>
+      </div>
+      <div class="reveal bg-moon rounded-3xl p-8">
+        <h3 class="font-display text-xl font-semibold mb-4">Materials</h3>
+        <ul class="space-y-2 text-night-700/80">
+          <li><span class="font-semibold text-night-900">Fill:</span> CertiPUR-US® certified, gel-infused memory foam</li>
+          <li><span class="font-semibold text-night-900">Cover:</span> 100% polyester, pre-installed, machine-washable</li>
+        </ul>
+      </div>
+      <div class="reveal bg-moon rounded-3xl p-8">
+        <h3 class="font-display text-xl font-semibold mb-4">Included</h3>
+        <ul class="space-y-2 text-night-700/80">
+          <li>✓ DreamWeaver Multi-Position Neck Pillow</li>
+          <li>✓ Machine-washable cover, pre-installed</li>
+          <li>✓ 1:1 access to a MedCline Sleep Specialist</li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-10 reveal">
+      <div class="bg-moon rounded-3xl p-8 md:flex items-center justify-between gap-8">
+        <div>
+          <h3 class="font-display text-xl font-semibold mb-2">Recommended for</h3>
+          <p class="text-night-700/80">Back, side & combination sleepers · position-changers · neck and upper-back tension sufferers · anyone seeking targeted neck support and pressure relief.</p>
+        </div>
+        <img src="img/product-mattress.jpg" alt="DreamWeaver pillow on a mattress" class="rounded-2xl w-full md:w-64 mt-6 md:mt-0 shadow-md">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="py-20 md:py-28">
+  <div class="max-w-3xl mx-auto px-5">
+    <div class="text-center mb-12 reveal">
+      <p class="text-ember-600 font-semibold text-sm tracking-widest uppercase mb-3">Questions</p>
+      <h2 class="font-display text-4xl md:text-5xl font-light">Asked & answered</h2>
+    </div>
+    <div id="faq-list" class="space-y-3"></div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="bg-night-950 text-moon py-20 md:py-28 relative overflow-hidden">
+  <div class="absolute inset-0 opacity-30" aria-hidden="true">
+    <div class="absolute top-0 left-1/3 w-[28rem] h-[28rem] rounded-full bg-ember-600/25 blur-3xl"></div>
+  </div>
+  <div class="relative max-w-3xl mx-auto px-5 text-center reveal">
+    <h2 class="font-display text-4xl md:text-6xl font-light mb-6">Tonight could be <span class="font-semibold text-ember-400">quieter</span> on your neck.</h2>
+    <p class="text-dusk text-lg mb-10">One size. No settings. Just geometry that works while you don't.</p>
+    <a href="https://medcline.com/products/multi-position-neck-pillow" target="_blank" rel="noopener"
+       class="inline-block bg-ember-500 hover:bg-ember-600 text-white font-semibold px-10 py-5 rounded-full transition shadow-2xl shadow-ember-500/30 text-xl">
+      Get DreamWeaver — $89.99
+    </a>
+    <p class="mt-6 text-sm text-dusk/70">Ships from MedCline · Secure checkout on medcline.com</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-night-900 text-dusk text-sm">
+  <div class="max-w-6xl mx-auto px-5 py-12">
+    <div class="md:flex justify-between gap-8">
+      <div class="max-w-md">
+        <p class="font-display text-xl text-moon mb-3">dream<span class="text-ember-400">weaver</span></p>
+        <p>A comfort line from <a href="https://medcline.com" target="_blank" rel="noopener" class="underline hover:text-moon">MedCline</a> — the doctor-founded sleep-posture company. DreamWeaver is not a medical device.</p>
+      </div>
+      <div class="mt-8 md:mt-0">
+        <p class="text-moon font-semibold mb-3">MedCline</p>
+        <ul class="space-y-2">
+          <li><a href="https://medcline.com/products/multi-position-neck-pillow" target="_blank" rel="noopener" class="hover:text-moon">Multi-Position Neck Pillow</a></li>
+          <li><a href="https://medcline.com" target="_blank" rel="noopener" class="hover:text-moon">medcline.com</a></li>
+          <li>Sleep Specialists: 800-610-1607</li>
+        </ul>
+      </div>
+    </div>
+    <p class="mt-10 pt-6 border-t border-white/10 text-dusk/60 leading-relaxed">
+      If you have concerns about existing pain, injuries, or medical conditions, please consult your physician before use.
+      © 2026 MedCline. Concept site for internal review.
+    </p>
+  </div>
+</footer>
+
+<script>
+// ---- data ----
+const ZONES = [
+  {k:'Zone 1', t:'Pressure-Relieving Head Cradle', c:'The central depression gently cradles your head, helping reduce pressure while keeping your neck supported and aligned throughout the night.'},
+  {k:'Zone 2', t:'Ergonomic Neck Contour', c:'Raised contours provide consistent neck support, helping maintain proper spinal alignment for more comfortable, restful sleep.'},
+  {k:'Zone 3', t:'Arm & Hand Comfort Zones', c:'Lateral zones give your arms and hands a natural place to rest, so side sleeping and position changes stay comfortable instead of cramped.'}
+];
+const POSITIONS = [
+  {t:'On your back', img:'img/hero-back.jpg', alt:'Back sleeping on the DreamWeaver pillow',
+   c:"The head cradle takes the pressure off while the neck contour fills the curve your mattress can't reach. Your spine stays neutral from the first minute to the last.",
+   pts:['Central cradle stabilizes the head','Contour supports the cervical curve','Reduces overnight pressure build-up']},
+  {t:'On your side', img:'img/side-sleeper.jpg', alt:'Woman sleeping on her side on the DreamWeaver pillow',
+   c:'The raised contour bridges the gap between shoulder and head, keeping your neck level with your spine — the alignment side sleepers almost never get from a flat pillow.',
+   pts:['Fills the shoulder-to-head gap','Keeps head level with the spine','Arm zones prevent numb, trapped arms']},
+  {t:'The 2am switch', img:'img/sleeper-3.jpg', alt:'Combination sleeper resting on the DreamWeaver pillow',
+   c:"Most sleepers change positions dozens of times a night. The zoned surface doesn't need to be adjusted, flipped, or fluffed — support is already waiting in the new position.",
+   pts:['Zoned design adapts as you move','No repositioning, flipping, or fluffing','Consistent alignment all night long']}
+];
+const FAQS = [
+  ['Is the DreamWeaver pillow good for neck pain?','It’s designed to help relieve neck pain by supporting proper spinal alignment and reducing pressure on the head and neck. The zoned design cradles the head while supporting the natural curve of the neck all night. If you have a medical condition or ongoing pain, check with your physician first.'],
+  ['Is it good for side sleepers?','Yes. The raised contours provide neck support for side sleeping, while the central depression cradles the head for stable alignment. Back and combination sleepers are covered by the same zoned geometry.'],
+  ['I switch positions constantly. Will it keep up?','That’s the whole point. The zoned structure adapts as you reposition between back and side sleeping — no flipping or fluffing required.'],
+  ['How is this different from a regular memory foam pillow?','A regular pillow is one uniform slab. DreamWeaver has a zoned, ergonomic design — central head cradle, raised neck contours, and arm zones — built to promote alignment and reduce pressure across multiple positions.'],
+  ['Is the foam safe and certified?','Yes. It’s CertiPUR-US® certified, gel-infused memory foam — made without harmful chemicals and tested against rigorous durability and performance standards.'],
+  ['How long does it take to adjust?','Some people feel the difference the first night; others take a few nights to a month as their neck and spine adapt to better alignment. Consistent use during the adjustment period is recommended.'],
+  ['What are the exact dimensions?','24.8" × 15.7" × 4.9", one size. The cover is 100% polyester, pre-installed, and machine-washable.']
+];
+
+// ---- nav scroll state ----
+const nav = document.getElementById('nav');
+const setNav = () => {
+  if (scrollY > 40) nav.classList.add('bg-night-950/90','backdrop-blur','shadow-lg');
+  else nav.classList.remove('bg-night-950/90','backdrop-blur','shadow-lg');
+};
+addEventListener('scroll', setNav); setNav();
+
+// ---- reveal on scroll ----
+const io = new IntersectionObserver(es => es.forEach(e => e.isIntersecting && e.target.classList.add('visible')), {threshold:.12});
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+// ---- zone explorer ----
+const zDots = document.querySelectorAll('.zone-dot');
+zDots.forEach(d => d.addEventListener('click', () => {
+  const z = ZONES[+d.dataset.zone];
+  zDots.forEach(x => {x.classList.remove('active','bg-ember-500'); x.classList.add('bg-night-800');});
+  d.classList.add('active','bg-ember-500'); d.classList.remove('bg-night-800');
+  document.getElementById('zone-kicker').textContent = z.k;
+  document.getElementById('zone-title').textContent = z.t;
+  document.getElementById('zone-copy').textContent = z.c;
+  const panel = document.querySelector('#zone-panel > div');
+  panel.classList.remove('pos-fade'); void panel.offsetWidth; panel.classList.add('pos-fade');
+}));
+
+// ---- position toggle ----
+const pBtns = document.querySelectorAll('.pos-btn');
+pBtns.forEach(b => b.addEventListener('click', () => {
+  const p = POSITIONS[+b.dataset.pos];
+  pBtns.forEach(x => {x.classList.remove('bg-ember-500','text-white'); x.classList.add('bg-white/10','text-moon'); x.setAttribute('aria-selected','false');});
+  b.classList.add('bg-ember-500','text-white'); b.classList.remove('bg-white/10'); b.setAttribute('aria-selected','true');
+  const img = document.getElementById('pos-img');
+  img.src = p.img; img.alt = p.alt;
+  document.getElementById('pos-title').textContent = p.t;
+  document.getElementById('pos-copy').textContent = p.c;
+  document.getElementById('pos-points').innerHTML = p.pts.map(x => `<li class="flex gap-3"><span class="text-ember-400">✓</span>${x}</li>`).join('');
+  const panel = document.getElementById('pos-panel');
+  panel.classList.remove('pos-fade'); void panel.offsetWidth; panel.classList.add('pos-fade');
+}));
+
+// ---- FAQ accordion ----
+document.getElementById('faq-list').innerHTML = FAQS.map(([q,a],i) => `
+  <div class="faq-item bg-white rounded-2xl shadow-sm ring-1 ring-night-900/5">
+    <button class="faq-q w-full flex items-center justify-between gap-4 text-left px-6 py-5 font-semibold" aria-expanded="false">
+      <span>${q}</span><span class="faq-chevron text-ember-600 shrink-0">▾</span>
+    </button>
+    <div class="faq-answer"><div class="overflow-hidden"><p class="px-6 pb-5 text-night-700/80 leading-relaxed">${a}</p></div></div>
+  </div>`).join('');
+document.querySelectorAll('.faq-q').forEach(btn => btn.addEventListener('click', () => {
+  const item = btn.closest('.faq-item');
+  const open = item.classList.toggle('open');
+  btn.setAttribute('aria-expanded', open);
+}));
+</script>
+</body>
+</html>
