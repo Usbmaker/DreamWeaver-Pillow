@@ -253,7 +253,42 @@ tailwind.config = {
       <p class="text-ember-400 font-semibold text-sm tracking-widest uppercase mb-3">The honest comparison</p>
       <h2 class="font-display text-4xl md:text-5xl font-light mb-4">A bag of soft vs. <span class="font-semibold">a point of view</span></h2>
     </div>
-    <div class="reveal overflow-x-auto rounded-3xl ring-1 ring-white/10">
+    <!-- Mobile: stacked comparison cards (no horizontal scrolling) -->
+    <div class="md:hidden space-y-4 reveal">
+      <div class="bg-night-900 rounded-2xl ring-1 ring-white/10 p-5">
+        <p class="font-semibold mb-3">Support when you change positions</p>
+        <p class="text-dusk mb-1.5"><span class="mr-2">✕</span>Re-fluff and hope</p>
+        <p class="text-ember-400 font-semibold"><span class="mr-2">✓</span>Already in place</p>
+      </div>
+      <div class="bg-night-900 rounded-2xl ring-1 ring-white/10 p-5">
+        <p class="font-semibold mb-3">Head stability</p>
+        <p class="text-dusk mb-1.5"><span class="mr-2">✕</span>Rolls and sinks</p>
+        <p class="text-ember-400 font-semibold"><span class="mr-2">✓</span>Zoned cradle</p>
+      </div>
+      <div class="bg-night-900 rounded-2xl ring-1 ring-white/10 p-5">
+        <p class="font-semibold mb-3">Neck &amp; spinal alignment</p>
+        <p class="text-dusk mb-1.5"><span class="mr-2">✕</span>Whatever the loft allows</p>
+        <p class="text-ember-400 font-semibold"><span class="mr-2">✓</span>Engineered contour</p>
+      </div>
+      <div class="bg-night-900 rounded-2xl ring-1 ring-white/10 p-5">
+        <p class="font-semibold mb-3">Somewhere for your arms</p>
+        <p class="text-dusk mb-1.5"><span class="mr-2">✕</span>Under the pillow, asleep by 3am</p>
+        <p class="text-ember-400 font-semibold"><span class="mr-2">✓</span>Dedicated comfort zones</p>
+      </div>
+      <div class="bg-night-900 rounded-2xl ring-1 ring-white/10 p-5">
+        <p class="font-semibold mb-3">Foam certification</p>
+        <p class="text-dusk mb-1.5"><span class="mr-2">✕</span>Often unlisted</p>
+        <p class="text-ember-400 font-semibold"><span class="mr-2">✓</span>CertiPUR-US®, gel-infused</p>
+      </div>
+      <div class="bg-night-900 rounded-2xl ring-1 ring-white/10 p-5">
+        <p class="font-semibold mb-3">Designed by</p>
+        <p class="text-dusk mb-1.5"><span class="mr-2">✕</span>A commodity factory</p>
+        <p class="text-ember-400 font-semibold"><span class="mr-2">✓</span>MedCline sleep engineers</p>
+      </div>
+      <p class="text-center text-dusk text-sm pt-1"><span class="text-dusk">✕ ordinary pillow</span> · <span class="text-ember-400">✓ DreamWeaver</span></p>
+    </div>
+    <!-- Tablet & up: full table -->
+    <div class="reveal hidden md:block overflow-x-auto rounded-3xl ring-1 ring-white/10">
       <table class="w-full min-w-[34rem] text-left bg-night-900">
         <thead>
           <tr class="border-b border-white/10 text-sm uppercase tracking-wider text-dusk">
