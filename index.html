@@ -168,10 +168,11 @@ tailwind.config = {
     </div>
     <div class="grid md:grid-cols-2 gap-10 items-center">
       <div class="relative reveal">
-        <img src="img/zones-diagram.png" alt="Diagram of the DreamWeaver pillow's zoned design" class="w-full rounded-2xl bg-white shadow-lg p-4">
+        <img id="zoom-diagram" src="img/zones-diagram.png" alt="Diagram of the DreamWeaver pillow's zoned design — click to enlarge" class="w-full rounded-2xl bg-white shadow-lg p-4 cursor-zoom-in" role="button" tabindex="0" aria-haspopup="dialog">
         <button data-zone="0" class="zone-dot active absolute left-[47%] top-[38%] w-9 h-9 rounded-full bg-ember-500 text-white font-bold shadow-lg" aria-label="Zone 1: head cradle">1</button>
         <button data-zone="1" class="zone-dot absolute left-[47%] top-[72%] w-9 h-9 rounded-full bg-night-800 text-white font-bold shadow-lg" aria-label="Zone 2: neck contour">2</button>
         <button data-zone="2" class="zone-dot absolute left-[12%] top-[52%] w-9 h-9 rounded-full bg-night-800 text-white font-bold shadow-lg" aria-label="Zone 3: arm zones">3</button>
+        <p class="absolute bottom-3 right-3 bg-night-900/80 text-moon text-xs font-medium px-3 py-1.5 rounded-full pointer-events-none select-none">🔍 Click diagram to enlarge</p>
       </div>
       <div id="zone-panel" class="reveal">
         <div class="bg-white rounded-3xl p-8 md:p-10 shadow-xl ring-1 ring-night-900/5 min-h-[16rem]">
@@ -385,6 +386,15 @@ tailwind.config = {
   </div>
 </section>
 
+<!-- DIAGRAM LIGHTBOX -->
+<div id="lightbox" class="hidden fixed inset-0 z-[70] bg-night-950/95 backdrop-blur-sm items-center justify-center p-4 sm:p-8 cursor-zoom-out" role="dialog" aria-modal="true" aria-label="Enlarged pillow design diagram">
+  <button id="lightbox-close" class="absolute top-4 right-4 sm:top-6 sm:right-6 w-12 h-12 rounded-full bg-white/10 hover:bg-white/25 text-moon text-2xl font-bold transition" aria-label="Close enlarged diagram">✕</button>
+  <div class="max-w-5xl w-full">
+    <img src="img/zones-diagram-large.png" loading="lazy" alt="Enlarged diagram of the DreamWeaver pillow's zoned design: 1 — central depression for stable sleeping, 2 — overall zoning design suitable for different sleeping positions, 3 — lateral design for arms and hands, with wave bulges for neck and spinal support" class="w-full max-h-[85vh] object-contain rounded-2xl bg-white p-4 sm:p-6 shadow-2xl">
+    <p class="text-center text-dusk text-sm mt-4">Click anywhere or press Esc to close</p>
+  </div>
+</div>
+
 <!-- STICKY MOBILE CTA -->
 <div id="sticky-cta" class="md:hidden fixed bottom-0 inset-x-0 z-50 translate-y-full transition-transform duration-300 bg-night-950/95 backdrop-blur border-t border-white/10 px-4 pt-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))]">
   <div class="flex items-center justify-between gap-3">
@@ -494,6 +504,16 @@ pBtns.forEach(b => b.addEventListener('click', () => {
   const panel = document.getElementById('pos-panel');
   panel.classList.remove('pos-fade'); void panel.offsetWidth; panel.classList.add('pos-fade');
 }));
+
+// ---- diagram lightbox ----
+const lb = document.getElementById('lightbox');
+const lbTrigger = document.getElementById('zoom-diagram');
+const openLb = () => { lb.classList.remove('hidden'); lb.classList.add('flex'); document.body.style.overflow='hidden'; document.getElementById('lightbox-close').focus(); };
+const closeLb = () => { lb.classList.add('hidden'); lb.classList.remove('flex'); document.body.style.overflow=''; lbTrigger.focus(); };
+lbTrigger.addEventListener('click', openLb);
+lbTrigger.addEventListener('keydown', e => { if (e.key==='Enter'||e.key===' ') { e.preventDefault(); openLb(); } });
+lb.addEventListener('click', closeLb);
+addEventListener('keydown', e => { if (e.key==='Escape' && !lb.classList.contains('hidden')) closeLb(); });
 
 // ---- geometry comparison ----
 const gBtns = document.querySelectorAll('.geo-btn');
