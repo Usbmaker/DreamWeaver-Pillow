@@ -36,6 +36,19 @@ tailwind.config = {
   @keyframes posfade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
   html{-webkit-text-size-adjust:100%}
   body{overflow-x:clip}
+  /* hero Ken Burns crossfade loop: 4 slides x 6s = 24s cycle */
+  .hero-slide{opacity:0;animation:heroFade 24s linear infinite, heroZoom 24s ease-in-out infinite}
+  .hero-slide:nth-child(1){opacity:1;animation-delay:0s}
+  .hero-slide:nth-child(2){animation-delay:6s}
+  .hero-slide:nth-child(3){animation-delay:12s}
+  .hero-slide:nth-child(4){animation-delay:18s}
+  .hero-slide:nth-child(odd){transform-origin:30% 40%}
+  .hero-slide:nth-child(even){transform-origin:70% 60%}
+  @keyframes heroFade{0%{opacity:1}25%{opacity:1}33%{opacity:0}90%{opacity:0}100%{opacity:1}}
+  @keyframes heroZoom{0%{transform:scale(1)}50%{transform:scale(1.09)}100%{transform:scale(1)}}
+  @media (prefers-reduced-motion: reduce){
+    .hero-slide{animation:none}
+  }
 </style>
 </head>
 <body class="bg-moon font-sans text-night-900 antialiased">
@@ -86,7 +99,12 @@ tailwind.config = {
       <p class="mt-2 text-sm text-dusk/70">One size · Free of harmful chemicals (CertiPUR-US®) · Machine-washable cover</p>
     </div>
     <div class="reveal">
-      <img src="img/hero-back.jpg" alt="Man sleeping comfortably on his back on the DreamWeaver Multi-Position Neck Pillow" class="rounded-3xl shadow-2xl ring-1 ring-white/10 w-full">
+      <div class="hero-loop relative aspect-[4/3] rounded-3xl shadow-2xl ring-1 ring-white/10 overflow-hidden" role="img" aria-label="People sleeping comfortably in different positions on the DreamWeaver Multi-Position Neck Pillow">
+        <img src="img/hero-back.jpg" alt="" class="hero-slide absolute inset-0 w-full h-full object-cover">
+        <img src="img/side-sleeper.jpg" alt="" aria-hidden="true" class="hero-slide absolute inset-0 w-full h-full object-cover">
+        <img src="img/sleeper-2.jpg" alt="" aria-hidden="true" class="hero-slide absolute inset-0 w-full h-full object-cover">
+        <img src="img/product-mattress.jpg" alt="" aria-hidden="true" class="hero-slide absolute inset-0 w-full h-full object-cover">
+      </div>
     </div>
   </div>
 </section>
