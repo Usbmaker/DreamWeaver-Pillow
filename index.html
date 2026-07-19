@@ -100,6 +100,12 @@ tailwind.config = {
           Get DreamWeaver — $89.99
         </a>
         <a href="#design" class="text-dusk hover:text-moon font-medium transition">See how it works ↓</a>
+        <button id="jingle-btn" type="button" aria-pressed="false"
+                class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-moon text-sm font-semibold pl-3 pr-4 py-2.5 rounded-full transition ring-1 ring-white/15">
+          <span id="jingle-icon" aria-hidden="true">🎵</span>
+          <span id="jingle-label">Play theme</span>
+        </button>
+        <audio id="jingle-audio" src="audio/dreamweaver-jingle.mp3" preload="none"></audio>
       </div>
       <p class="mt-4 text-sm text-dusk">or 4 interest-free payments of <span class="text-moon font-semibold">$22.49</span> with Shop Pay at checkout</p>
       <p class="mt-2 text-sm text-dusk/70">One size · Free of harmful chemicals (CertiPUR-US®) · Machine-washable cover</p>
@@ -545,6 +551,49 @@ pBtns.forEach(b => b.addEventListener('click', () => {
   const panel = document.getElementById('pos-panel');
   panel.classList.remove('pos-fade'); void panel.offsetWidth; panel.classList.add('pos-fade');
 }));
+
+// ---- hero jingle: plays twice with a pause between runs, then stops ----
+const jingleAudio = document.getElementById('jingle-audio');
+const jingleBtn = document.getElementById('jingle-btn');
+const jingleIcon = document.getElementById('jingle-icon');
+const jingleLabel = document.getElementById('jingle-label');
+const REPLAY_GAP_MS = 3500;
+let jingleRunsDone = 0;
+let jingleGapTimer = null;
+
+const jingleSetIdle = () => {
+  jingleBtn.setAttribute('aria-pressed', 'false');
+  jingleIcon.textContent = '🎵';
+  jingleLabel.textContent = 'Play theme';
+};
+const jingleSetPlaying = () => {
+  jingleBtn.setAttribute('aria-pressed', 'true');
+  jingleIcon.textContent = '⏸';
+  jingleLabel.textContent = 'Stop theme';
+};
+const jingleStop = () => {
+  clearTimeout(jingleGapTimer);
+  jingleAudio.pause();
+  jingleAudio.currentTime = 0;
+  jingleRunsDone = 0;
+  jingleSetIdle();
+};
+
+jingleBtn.addEventListener('click', () => {
+  if (jingleBtn.getAttribute('aria-pressed') === 'true') { jingleStop(); return; }
+  jingleRunsDone = 0;
+  jingleAudio.currentTime = 0;
+  jingleAudio.play();
+  jingleSetPlaying();
+});
+jingleAudio.addEventListener('ended', () => {
+  jingleRunsDone++;
+  if (jingleRunsDone < 2) {
+    jingleGapTimer = setTimeout(() => { jingleAudio.currentTime = 0; jingleAudio.play(); }, REPLAY_GAP_MS);
+  } else {
+    jingleStop();
+  }
+});
 
 // ---- diagram lightbox ----
 const lb = document.getElementById('lightbox');
