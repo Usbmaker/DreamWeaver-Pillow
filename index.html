@@ -552,14 +552,11 @@ pBtns.forEach(b => b.addEventListener('click', () => {
   panel.classList.remove('pos-fade'); void panel.offsetWidth; panel.classList.add('pos-fade');
 }));
 
-// ---- hero jingle: plays twice with a pause between runs, then stops ----
+// ---- hero jingle: plays once, button resets so the user can replay manually ----
 const jingleAudio = document.getElementById('jingle-audio');
 const jingleBtn = document.getElementById('jingle-btn');
 const jingleIcon = document.getElementById('jingle-icon');
 const jingleLabel = document.getElementById('jingle-label');
-const REPLAY_GAP_MS = 3500;
-let jingleRunsDone = 0;
-let jingleGapTimer = null;
 
 const jingleSetIdle = () => {
   jingleBtn.setAttribute('aria-pressed', 'false');
@@ -572,28 +569,18 @@ const jingleSetPlaying = () => {
   jingleLabel.textContent = 'Stop theme';
 };
 const jingleStop = () => {
-  clearTimeout(jingleGapTimer);
   jingleAudio.pause();
   jingleAudio.currentTime = 0;
-  jingleRunsDone = 0;
   jingleSetIdle();
 };
 
 jingleBtn.addEventListener('click', () => {
   if (jingleBtn.getAttribute('aria-pressed') === 'true') { jingleStop(); return; }
-  jingleRunsDone = 0;
   jingleAudio.currentTime = 0;
   jingleAudio.play();
   jingleSetPlaying();
 });
-jingleAudio.addEventListener('ended', () => {
-  jingleRunsDone++;
-  if (jingleRunsDone < 2) {
-    jingleGapTimer = setTimeout(() => { jingleAudio.currentTime = 0; jingleAudio.play(); }, REPLAY_GAP_MS);
-  } else {
-    jingleStop();
-  }
-});
+jingleAudio.addEventListener('ended', jingleStop);
 
 // ---- diagram lightbox ----
 const lb = document.getElementById('lightbox');
