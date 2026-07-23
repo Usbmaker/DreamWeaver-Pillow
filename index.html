@@ -45,7 +45,7 @@ tailwind.config = {
   .jingle-btn{animation:jinglePulse 2.4s ease-in-out infinite}
   .jingle-idle{background:rgba(221,138,84,.14);color:#e8a87c;border:1.5px solid rgba(232,168,124,.55)}
   .jingle-idle:hover{background:rgba(221,138,84,.24);border-color:#e8a87c}
-  .jingle-playing{background:#dd8a54;color:#fff;box-shadow:none;animation:none}
+  .jingle-playing{background:#dd8a54;color:#111a30;box-shadow:none;animation:none}
   .jingle-playing:hover{background:#c96f38}
   @keyframes jinglePulse{
     0%,100%{box-shadow:0 0 0 0 rgba(221,138,84,.35)}
@@ -68,10 +68,11 @@ tailwind.config = {
 </style>
 </head>
 <body class="bg-moon font-sans text-night-900 antialiased">
+<a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-[100] focus:bg-white focus:text-night-900 focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg">Skip to main content</a>
 
 <!-- NAV -->
 <header id="nav" class="fixed top-0 inset-x-0 z-50 transition-all duration-300">
-  <div class="bg-ember-500 text-white text-center text-xs sm:text-sm font-semibold px-4 py-2">
+  <div class="bg-ember-500 text-night-900 text-center text-xs sm:text-sm font-semibold px-4 py-2">
     In stock &amp; shipping now · $89.99 or 4 interest-free payments of $22.49 · Secure checkout on medcline.com
   </div>
   <div class="max-w-6xl mx-auto px-5 py-4 flex items-center justify-between">
@@ -83,12 +84,13 @@ tailwind.config = {
       <a href="#faq" class="hover:text-moon transition">FAQ</a>
     </nav>
     <a href="https://medcline.com/products/multi-position-neck-pillow" target="_blank" rel="noopener"
-       class="bg-ember-500 hover:bg-ember-600 text-white text-sm font-semibold px-5 py-2.5 rounded-full transition shadow-lg shadow-ember-500/25">
+       class="bg-ember-500 hover:bg-ember-600 text-night-900 text-sm font-semibold px-5 py-2.5 rounded-full transition shadow-lg shadow-ember-500/25">
       Shop — $89.99
     </a>
   </div>
 </header>
 
+<main id="main-content" tabindex="-1">
 <!-- HERO -->
 <section id="top" class="relative bg-night-950 text-moon overflow-hidden">
   <div class="absolute inset-0 opacity-40" aria-hidden="true">
@@ -106,13 +108,13 @@ tailwind.config = {
       </p>
       <div class="flex flex-wrap items-center gap-4">
         <a href="https://medcline.com/products/multi-position-neck-pillow" target="_blank" rel="noopener"
-           class="bg-ember-500 hover:bg-ember-600 text-white font-semibold px-8 py-4 rounded-full transition shadow-xl shadow-ember-500/30 text-lg">
+           class="bg-ember-500 hover:bg-ember-600 text-night-900 font-semibold px-8 py-4 rounded-full transition shadow-xl shadow-ember-500/30 text-lg">
           Get DreamWeaver — $89.99
         </a>
         <a href="#design" class="text-dusk hover:text-moon font-medium transition">See how it works ↓</a>
       </div>
       <p class="mt-4 text-sm text-dusk">or 4 interest-free payments of <span class="text-moon font-semibold">$22.49</span> with Shop Pay at checkout</p>
-      <p class="mt-2 text-sm text-dusk/70">One size · Free of harmful chemicals (CertiPUR-US®) · Machine-washable cover</p>
+      <p class="mt-2 text-sm text-dusk/80">One size · Free of harmful chemicals (CertiPUR-US®) · Machine-washable cover</p>
     </div>
     <div class="reveal">
       <div class="hero-loop relative aspect-[4/3] rounded-3xl shadow-2xl ring-1 ring-white/10 overflow-hidden" role="img" aria-label="People sleeping comfortably in different positions on the DreamWeaver Multi-Position Neck Pillow">
@@ -193,7 +195,7 @@ tailwind.config = {
     <div class="grid md:grid-cols-2 gap-10 items-center">
       <div class="relative reveal">
         <img id="zoom-diagram" src="img/zones-diagram.png" alt="Diagram of the DreamWeaver pillow's zoned design — click to enlarge" class="w-full rounded-2xl bg-white shadow-lg p-4 cursor-zoom-in" role="button" tabindex="0" aria-haspopup="dialog">
-        <button data-zone="0" class="zone-dot active absolute left-[47%] top-[38%] w-9 h-9 rounded-full bg-ember-500 text-white font-bold shadow-lg" aria-label="Zone 1: head cradle">1</button>
+        <button data-zone="0" class="zone-dot active absolute left-[47%] top-[38%] w-9 h-9 rounded-full bg-ember-500 text-night-900 font-bold shadow-lg" aria-label="Zone 1: head cradle">1</button>
         <button data-zone="1" class="zone-dot absolute left-[47%] top-[72%] w-9 h-9 rounded-full bg-night-800 text-white font-bold shadow-lg" aria-label="Zone 2: neck contour">2</button>
         <button data-zone="2" class="zone-dot absolute left-[12%] top-[52%] w-9 h-9 rounded-full bg-night-800 text-white font-bold shadow-lg" aria-label="Zone 3: arm zones">3</button>
         <p class="absolute bottom-3 right-3 bg-night-900/80 text-moon text-xs font-medium px-3 py-1.5 rounded-full pointer-events-none select-none">🔍 Click diagram to enlarge</p>
@@ -217,7 +219,7 @@ tailwind.config = {
       <h2 class="font-display text-4xl md:text-5xl font-light mb-4">Built for the way you <span class="font-semibold">actually</span> sleep</h2>
     </div>
     <div class="flex flex-wrap justify-center gap-2 mb-10 reveal" role="tablist" aria-label="Sleep positions">
-      <button data-pos="0" role="tab" aria-selected="true" class="pos-btn bg-ember-500 text-white font-semibold px-4 sm:px-6 py-3 rounded-full transition">Back</button>
+      <button data-pos="0" role="tab" aria-selected="true" class="pos-btn bg-ember-500 text-night-900 font-semibold px-4 sm:px-6 py-3 rounded-full transition">Back</button>
       <button data-pos="1" role="tab" aria-selected="false" class="pos-btn bg-white/10 hover:bg-white/20 text-moon font-semibold px-4 sm:px-6 py-3 rounded-full transition">Side</button>
       <button data-pos="2" role="tab" aria-selected="false" class="pos-btn bg-white/10 hover:bg-white/20 text-moon font-semibold px-4 sm:px-6 py-3 rounded-full transition">Combination</button>
     </div>
@@ -232,7 +234,7 @@ tailwind.config = {
           <li class="flex gap-3"><span class="text-ember-400">✓</span>Reduces overnight pressure build-up</li>
         </ul>
         <a id="pos-cta" href="https://medcline.com/products/multi-position-neck-pillow" target="_blank" rel="noopener"
-           class="inline-block mt-8 bg-ember-500 hover:bg-ember-600 text-white font-semibold px-7 py-3.5 rounded-full transition shadow-lg shadow-ember-500/25">
+           class="inline-block mt-8 bg-ember-500 hover:bg-ember-600 text-night-900 font-semibold px-7 py-3.5 rounded-full transition shadow-lg shadow-ember-500/25">
           Get the pillow built for back sleepers →
         </a>
       </div>
@@ -241,11 +243,11 @@ tailwind.config = {
 </section>
 
 <!-- MID-PAGE CTA BAND -->
-<section class="bg-ember-500 text-white">
+<section class="bg-ember-500 text-night-900">
   <div class="max-w-6xl mx-auto px-5 py-10 md:flex items-center justify-between gap-8 text-center md:text-left">
     <div class="reveal">
       <p class="font-display text-2xl md:text-3xl font-semibold mb-1">Your side of the bed, upgraded — tonight decides.</p>
-      <p class="text-white/85">One size fits every position. In stock and shipping now from Amenity Health.</p>
+      <p class="text-night-900/85">One size fits every position. In stock and shipping now from Amenity Health.</p>
     </div>
     <a href="https://medcline.com/products/multi-position-neck-pillow" target="_blank" rel="noopener"
        class="reveal inline-block shrink-0 mt-6 md:mt-0 bg-night-950 hover:bg-night-900 text-moon font-semibold px-8 py-4 rounded-full transition shadow-xl">
@@ -316,7 +318,7 @@ tailwind.config = {
       <table class="w-full min-w-[34rem] text-left bg-night-900">
         <thead>
           <tr class="border-b border-white/10 text-sm uppercase tracking-wider text-dusk">
-            <th class="px-6 py-5 font-semibold"> </th>
+            <th class="px-6 py-5 font-semibold"><span class="sr-only">Feature</span></th>
             <th class="px-6 py-5 font-semibold">Ordinary pillow</th>
             <th class="px-6 py-5 font-semibold text-ember-400">DreamWeaver</th>
           </tr>
@@ -333,7 +335,7 @@ tailwind.config = {
     </div>
     <div class="text-center mt-10 reveal">
       <a href="https://medcline.com/products/multi-position-neck-pillow" target="_blank" rel="noopener"
-         class="inline-block bg-ember-500 hover:bg-ember-600 text-white font-semibold px-8 py-4 rounded-full transition shadow-xl shadow-ember-500/30">
+         class="inline-block bg-ember-500 hover:bg-ember-600 text-night-900 font-semibold px-8 py-4 rounded-full transition shadow-xl shadow-ember-500/30">
         Upgrade the geometry — $89.99
       </a>
     </div>
@@ -399,7 +401,7 @@ tailwind.config = {
       <div class="mt-8 pt-8 border-t border-night-900/10 sm:flex items-center justify-between gap-6">
         <p class="text-night-700/70">Checked even two? That's what it was designed for.</p>
         <a href="https://medcline.com/products/multi-position-neck-pillow" target="_blank" rel="noopener"
-           class="inline-block shrink-0 mt-4 sm:mt-0 bg-ember-500 hover:bg-ember-600 text-white font-semibold px-7 py-3.5 rounded-full transition shadow-lg shadow-ember-500/25">
+           class="inline-block shrink-0 mt-4 sm:mt-0 bg-ember-500 hover:bg-ember-600 text-night-900 font-semibold px-7 py-3.5 rounded-full transition shadow-lg shadow-ember-500/25">
           Yes — that's me. Shop now
         </a>
       </div>
@@ -436,11 +438,11 @@ tailwind.config = {
     <h2 class="font-display text-4xl md:text-6xl font-light mb-6">Tonight could be <span class="font-semibold text-ember-400">quieter</span> on your neck.</h2>
     <p class="text-dusk text-lg mb-10">One size. No settings. Just geometry that works while you don't.</p>
     <a href="https://medcline.com/products/multi-position-neck-pillow" target="_blank" rel="noopener"
-       class="inline-block bg-ember-500 hover:bg-ember-600 text-white font-semibold px-10 py-5 rounded-full transition shadow-2xl shadow-ember-500/30 text-xl">
+       class="inline-block bg-ember-500 hover:bg-ember-600 text-night-900 font-semibold px-10 py-5 rounded-full transition shadow-2xl shadow-ember-500/30 text-xl">
       Get DreamWeaver — $89.99
     </a>
     <p class="mt-4 text-sm text-dusk">or 4 interest-free payments of $22.49 with Shop Pay · about 8¢ a night over three years</p>
-    <p class="mt-2 text-sm text-dusk/70">In stock · Ships from Amenity Health · Secure checkout on medcline.com</p>
+    <p class="mt-2 text-sm text-dusk/80">In stock · Ships from Amenity Health · Secure checkout on medcline.com</p>
     <p class="mt-6 text-dusk/80 italic">Gift-worthy — if you can bear to hand it over.</p>
   </div>
 </section>
@@ -462,11 +464,12 @@ tailwind.config = {
       <p class="text-dusk text-xs">$89.99 · or 4 × $22.49</p>
     </div>
     <a href="https://medcline.com/products/multi-position-neck-pillow" target="_blank" rel="noopener"
-       class="bg-ember-500 hover:bg-ember-600 text-white font-semibold px-6 py-3 rounded-full transition text-sm shadow-lg shadow-ember-500/30">
+       class="bg-ember-500 hover:bg-ember-600 text-night-900 font-semibold px-6 py-3 rounded-full transition text-sm shadow-lg shadow-ember-500/30">
       Buy now
     </a>
   </div>
 </div>
+</main>
 
 <!-- FOOTER -->
 <footer class="bg-night-900 text-dusk text-sm">
@@ -485,7 +488,7 @@ tailwind.config = {
         </ul>
       </div>
     </div>
-    <p class="mt-10 pt-6 border-t border-white/10 text-dusk/60 leading-relaxed">
+    <p class="mt-10 pt-6 border-t border-white/10 text-dusk/82 leading-relaxed">
       If you have concerns about existing pain, injuries, or medical conditions, please consult your physician before use.
       © 2026 Amenity Health. Concept site for internal review.
     </p>
@@ -539,8 +542,8 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 const zDots = document.querySelectorAll('.zone-dot');
 zDots.forEach(d => d.addEventListener('click', () => {
   const z = ZONES[+d.dataset.zone];
-  zDots.forEach(x => {x.classList.remove('active','bg-ember-500'); x.classList.add('bg-night-800');});
-  d.classList.add('active','bg-ember-500'); d.classList.remove('bg-night-800');
+  zDots.forEach(x => {x.classList.remove('active','bg-ember-500','text-night-900'); x.classList.add('bg-night-800','text-white');});
+  d.classList.add('active','bg-ember-500','text-night-900'); d.classList.remove('bg-night-800','text-white');
   document.getElementById('zone-kicker').textContent = z.k;
   document.getElementById('zone-title').textContent = z.t;
   document.getElementById('zone-copy').textContent = z.c;
@@ -552,8 +555,8 @@ zDots.forEach(d => d.addEventListener('click', () => {
 const pBtns = document.querySelectorAll('.pos-btn');
 pBtns.forEach(b => b.addEventListener('click', () => {
   const p = POSITIONS[+b.dataset.pos];
-  pBtns.forEach(x => {x.classList.remove('bg-ember-500','text-white'); x.classList.add('bg-white/10','text-moon'); x.setAttribute('aria-selected','false');});
-  b.classList.add('bg-ember-500','text-white'); b.classList.remove('bg-white/10'); b.setAttribute('aria-selected','true');
+  pBtns.forEach(x => {x.classList.remove('bg-ember-500','text-night-900'); x.classList.add('bg-white/10','text-moon'); x.setAttribute('aria-selected','false');});
+  b.classList.add('bg-ember-500','text-night-900'); b.classList.remove('bg-white/10'); b.setAttribute('aria-selected','true');
   const img = document.getElementById('pos-img');
   img.src = p.img; img.alt = p.alt;
   document.getElementById('pos-title').textContent = p.t;
